@@ -6,10 +6,12 @@
 |email_address|integer|null: false, foreign_key: true|
 
 
+
+
 ## Association
-- belongs_to :groups
-- belongs_to :message
-- belongs_to :chat
+- has_many :groups
+- has_many_to :message
+- has_many :chat
 
 
 ## groups_usersテーブル
@@ -45,7 +47,6 @@
 |user_id|integer|null: false, foreign_key: true|
 |grouos_id|integer|null: false, foreign_key: true|
 |message_id|integer|null: false, foreign_key: true|
-|photo_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :user
