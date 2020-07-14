@@ -1,7 +1,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_name|text|null: false, foreign_key: true|
+|name|string|null: false|
 |email_address|text|null: false, foreign_key: true|
 
 ## Association
@@ -24,7 +24,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :users, through: :groups_users
@@ -43,8 +43,8 @@
 
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belong_to :groups
+- belong_to :users
 
 
 # README
