@@ -43,8 +43,8 @@
 
 
 ### Association
-- belong_to :groups
-- belong_to :users
+- belong_to :group
+- belong_to :user
 
 
 # README
