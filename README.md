@@ -2,7 +2,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|email_address|text|null: false, foreign_key: true|
 
 ## Association
 - has_many :groups, through: :groups_users
