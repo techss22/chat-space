@@ -1,0 +1,40 @@
+.main-chat
+  .chat-main_group-info
+    .chat-main_group-name-member
+      .chat-main_group-name test
+      .chat-main_group-member test
+    .heder-raiget_botan 
+      = link_to "#", class: "edit_button" do
+        Edit
+
+  .chat-main_message-list
+    .chat-main_message-box
+      .chat-main_message-info
+        .chat-main_message-user test
+        .chat-main_message-day 2020年7月15日19時00分
+      .chat-main_Message-field
+        .chat-main_Message-coment おはよう
+    
+  .chat-main_message-form
+    .chat-main_message-form-content
+      %input{type: "text", class: "inputBox_text", placeholder: "type a message"}
+      %label{class: "inputBox_image"}
+        = icon('far', 'image')
+        %input{type: "file"}
+    .chat-main_message-form-botan Send
+            
+  -# .chat-main_message-form
+  -#   .chat-main_message-form-input
+  -#     .chat-main_message-form-content
+
+-# .parent
+-#   .parent__child
+-#     .parent__child__grandChild
+-#   .parent__child
+
+-# .chat-main__group-info
+-#   .chat-main__group-info__name
+-#     .chat-main__group-info__name__member
+
+  -#f.submit 'Send', class:'submit-btn'
+
