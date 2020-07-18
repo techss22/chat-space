@@ -1,16 +1,20 @@
 .side-bar
   .side-bar_user-name
     .top-items
-      .top-items_name 名前
+      .top-items_name 
         =  current_user.name
         
       .top-items_icons
-        = link_to "#" do
+        = link_to new_group_path do
           = icon('far', 'edit', class: 'icon-pencil')
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'icon-gear')
 
   .side-bar_group-list
-    .side-bar_group 
-      .side-bar_grou-name1 test
-      .side-bar_grou-messages メッセージ
+    - current_user.groups.each do |group|
+      .side-bar_group 
+        = link_to '#' do
+          .side-bar_grou-name1
+            = group.name
+          .side-bar_grou-messages
+            メッセージはまだありません
