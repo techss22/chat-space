@@ -1,25 +1,25 @@
 .main-chat
   .chat-main_group-info
     .chat-main_group-name-member
-      .chat-main_group-name test
-      .chat-main_group-member test
+      .chat-main_group-name
+        = @group.name
+      .chat-main_group-member
+        Member:
+        - @group.users.each do |u|
+          = u.name
     .heder-raiget_botan 
-      = link_to "#", class: "edit_button" do
+      = link_to edit_group_path(@group), class: "edit_button" do
         Edit
 
   .chat-main_message-list
-    .chat-main_message-box
-      .chat-main_message-info
-        .chat-main_message-user test
-        .chat-main_message-day 2020年7月15日19時00分
-      .chat-main_Message-field
-        .chat-main_Message-coment おはよう
+    = render @messages
     
-  .chat-main_message-form
-    .chat-main_message-form-content
-      %input{type: "text", class: "inputBox_text", placeholder: "type a message"}
-      %label{class: "inputBox_image"}
-        = icon('far', 'image')
-        %input{type: "file"}
-    .chat-main_message-form-botan Send
+  .Footer
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contentes
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'chat-main_message-form-botan'
             

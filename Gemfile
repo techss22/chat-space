@@ -1,6 +1,8 @@
 gem 'devise'
 gem 'pry-rails'
 gem 'font-awesome-sass'
+gem 'carrierwave'
+gem 'mini_magick'
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
